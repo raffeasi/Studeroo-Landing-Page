@@ -3,285 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studeroo - Track your study time. Stay motivated. Cheer friends.</title>
+    <title>Studeroo | Track. Motivate. Cheer.</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Sticky Glassmorphism Navigation -->
+
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">Studeroo</div>
-                <div class="nav-links">
-                    <a href="#features">Features</a>
-                    <a href="#how-it-works">How it Works</a>
-                    <a href="#story">Our Story</a>
-                    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
-                </div>
+        <div class="container nav-content">
+            <div class="logo">Studeroo</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#story">Story</a>
+                <a href="#waitlist" class="nav-cta">Join Waitlist</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                            <circle cx="8" cy="8" r="3" fill="currentColor"/>
-                        </svg>
-                        Now in Beta
-                    </div>
-                    <h1 class="hero-title">
-                        Track your study time.<br>
-                        Stay motivated.<br>
-                        Cheer friends.
-                    </h1>
-                    <p class="hero-subtitle">
-                        Studeroo is a modern study tool designed for students who want to stay accountable, track their progress, and motivate their friends. Simple, social, and effective.
-                    </p>
-                    <div class="hero-cta-group">
-                        <button class="btn-primary">
-                            Join the Waitlist
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                        <button class="btn-secondary">Watch Demo</button>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">12,000+</div>
-                            <div class="stat-label">Students on waitlist</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">150+</div>
-                            <div class="stat-label">Universities</div>
-                        </div>
-                    </div>
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="badge">Now in Beta</div>
+                <h1>Track your study time. Stay motivated.</h1>
+                <p class="subtitle">The social study log for students. Stay accountable and reach your goals with friends.</p>
+                <div class="cta-group">
+                    <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+                    <a href="#features" class="btn-secondary">Learn More</a>
                 </div>
-                <div class="hero-mockup">
-                    <img src="frontpage-mockup.png" alt="Studeroo App - Study Session Feed" class="floating-mockup">
-                </div>
+            </div>
+            <div class="hero-mockup">
+                <img src="frontpage-mockup.png" alt="Studeroo App">
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
+    <section id="features" class="features">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Everything you need to study smarter</h2>
-                <p class="section-subtitle">Track sessions, stay accountable, and celebrate progress with friends</p>
+            <div class="section-intro">
+                <h2>Everything you need to study smarter</h2>
             </div>
 
-            <!-- Feature 1: Add Study Sessions -->
             <div class="feature-row">
                 <div class="feature-content">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 16H20M16 12V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Add Your Study Sessions</h3>
-                    <p class="feature-description">
-                        Log what you're working on — subject, time, notes, and a photo if you want. It's your personal study log, and it helps you stay consistent and accountable.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Track time spent on each subject</li>
-                        <li>Add notes and reflections</li>
-                        <li>Upload photos of your workspace</li>
-                        <li>Tag study partners</li>
-                    </ul>
+                    <h3>Add Your Study Sessions</h3>
+                    <p>Log what you're working on—subject, time, and reflections. It's your personal study log to stay consistent.</p>
                 </div>
                 <div class="feature-mockup">
-                    <img src="save-mockup.png" alt="Save Study Session" class="mockup-image">
+                    <img src="save-mockup.png" alt="Save Session">
                 </div>
             </div>
 
-            <!-- Feature 2: Support and Connect -->
             <div class="feature-row reverse">
                 <div class="feature-content">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M16 20C20.4183 20 24 16.4183 24 12C24 7.58172 20.4183 4 16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 20 16 20Z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M4 28C4 28 6 22 16 22C26 22 28 28 28 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Support and connect with others</h3>
-                    <p class="feature-description">
-                        Give kudos, leave comments, and stay inspired by study sessions shared by your friends. Learning is better together.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Like and comment on friends' sessions</li>
-                        <li>See who's studying what in real-time</li>
-                        <li>Build accountability partnerships</li>
-                        <li>Celebrate milestones together</li>
-                    </ul>
-                </div>
-                <div class="feature-mockup">
-                    <img src="comments-mockup.png" alt="Comments and Social Features" class="mockup-image">
-                </div>
-            </div>
-
-            <!-- Feature 3: Join Global Goals -->
-            <div class="feature-row">
-                <div class="feature-content">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                            <path d="M16 4L20 12L28 14L22 20L24 28L16 24L8 28L10 20L4 14L12 12L16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Join global goals</h3>
-                    <p class="feature-description">
-                        Track your progress toward big academic goals — like AP exams or the SAT — with your friends. See where everyone stands, celebrate milestones, and reach the finish line together.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Visual progress tracking</li>
-                        <li>See friends' achievements</li>
-                        <li>Milestone celebrations</li>
-                        <li>Group motivation</li>
-                    </ul>
-                </div>
-                <div class="feature-mockup">
-                    <img src="goals-mockup.png" alt="Goals Tracking" class="mockup-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How the App Works -->
-    <section id="how-it-works" class="how-it-works-section">
-        <div class="container">
-            <div class="section-header centered">
-                <h2 class="section-title">How the App Works</h2>
-            </div>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h3>Add Your Study Sessions</h3>
-                    <p>Log what you're working on — subject, time, notes, and a photo if you want.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h3>Track Your Progress</h3>
-                    <p>It's your personal study log, and it helps you stay consistent and accountable.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
                     <h3>Connect with Friends</h3>
-                    <p>Share sessions, give kudos, and motivate each other to reach your goals.</p>
+                    <p>Give kudos, leave comments, and stay inspired by study sessions shared by your circle.</p>
+                </div>
+                <div class="feature-mockup">
+                    <img src="comments-mockup.png" alt="Social Feed">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Story -->
-    <section id="story" class="story-section">
-        <div class="container">
-            <div class="story-grid">
-                <div class="story-content">
-                    <h2 class="section-title">Our story.</h2>
-                </div>
-                <div class="story-text">
-                    <div class="story-label">By students for students</div>
-                    <p>
-                        The idea for Studeroo came while I was studying for my final high school exams in Finland. I kept thinking — we have apps that track our runs, our workouts, even our sleep... so why not our studying? What if I could see other people's progress too? I knew that would motivate me to sit down and start. That's where Studeroo began: a simple, social way to log your study sessions and stay accountable — together.
-                    </p>
-                    <button class="btn-secondary">Join the journey</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join the Waitlist -->
-    <section id="waitlist" class="waitlist-section">
+    <section id="waitlist" class="waitlist">
         <div class="container">
             <div class="waitlist-card">
-                <div class="waitlist-content">
-                    <div class="waitlist-icon">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                            <path d="M24 4L30 18L44 20L34 30L36 44L24 38L12 44L14 30L4 20L18 18L24 4Z" fill="#204099"/>
-                        </svg>
-                    </div>
-                    <h2 class="waitlist-title">Join the waitlist!</h2>
-                    <p class="waitlist-subtitle">
-                        We're launching soon. Join the waitlist and be the first to track your study streaks, share your progress, and reach your goals with friends.
-                    </p>
-                    <form class="waitlist-form">
-                        <div class="form-group">
-                            <label for="email">Email [Required]</label>
-                            <input type="email" id="email" placeholder="your.email@example.com" required>
-                        </div>
-                        <button type="submit" class="btn-primary full-width">
-                            Join the waitlist
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </form>
-                    <div class="waitlist-features">
-                        <div class="waitlist-feature">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M16.25 6.25L7.5 15L3.75 11.25" stroke="#4C86C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Get Early Access</span>
-                        </div>
-                        <div class="waitlist-feature">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M16.25 6.25L7.5 15L3.75 11.25" stroke="#4C86C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Exclusive Beta Features</span>
-                        </div>
-                        <div class="waitlist-feature">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M16.25 6.25L7.5 15L3.75 11.25" stroke="#4C86C6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Shape the Future</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo large">Studeroo</div>
-                    <p>Track your study time. Stay motivated. Cheer friends.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Product</h4>
-                        <a href="#features">Features</a>
-                        <a href="#how-it-works">How it Works</a>
-                        <a href="#waitlist">Join Waitlist</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Company</h4>
-                        <a href="#story">Our Story</a>
-                        <a href="#">About Us</a>
-                        <a href="#">Contact</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Studeroo. Made with ❤️ by students, for students.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+                <h2>Join the waitlist!</h2>
