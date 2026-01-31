@@ -1,80 +1,99 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-
-:root {
-    --blue: #204099;
-    --light-blue: #4C86C6;
-    --white: #FFFFFF;
-    --gray: #FBFBFE;
-    --text: #1D1D1F;
+/* --- SECTION SPACING (The Breath) --- */
+section {
+    padding: 100px 0;
+    opacity: 1;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { 
-    font-family: 'Inter', sans-serif; 
-    background: var(--white); 
-    color: var(--text); 
-    line-height: 1.6;
-    overflow-x: hidden;
+/* --- FEATURES SECTION (The Smooth Fix) --- */
+.feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 120px;
 }
 
-/* --- THE SECRET TO CLEAN DESIGN: SPACE --- */
-.container { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
-section { padding: 120px 0; }
-
-/* --- NAV --- */
-nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(255,255,255,0.8); backdrop-filter: blur(15px);
-    padding: 20px 0; border-bottom: 1px solid #eee;
+/* This is the smooth way to flip the layout without "lag" */
+.feature-row.reverse {
+    flex-direction: row-reverse;
 }
-.nav-content { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 22px; font-weight: 800; color: var(--blue); }
 
-/* --- HERO --- */
-.hero { padding-top: 200px; background: linear-gradient(180deg, #F5F7FF 0%, #FFFFFF 100%); }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-h1 { font-size: 58px; line-height: 1.1; font-weight: 800; color: var(--blue); margin-bottom: 25px; letter-spacing: -2px; }
-.hero-subtitle { font-size: 20px; color: #666; margin-bottom: 40px; }
+.feature-content {
+    flex: 1;
+    max-width: 500px;
+}
 
-/* --- THE FLOATING PHONES (NO BOXES) --- */
-.hero-mockup img, .mockup-image {
+.feature-mockup {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* This tells the GPU to prepare for animation, making it lag-free */
+    will-change: transform; 
+}
+
+.mockup-image {
     width: 100%;
-    max-width: 400px; /* Forces them to stay a professional size */
+    max-width: 380px;
     height: auto;
-    display: block;
-    margin: 0 auto;
-    filter: drop-shadow(0 30px 60px rgba(32, 64, 153, 0.15));
-    transition: transform 0.4s ease;
+    filter: drop-shadow(0 20px 40px rgba(32, 64, 153, 0.1));
+    /* Using a 'Bezier' curve makes the hover feel professional, not robotic */
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
 }
-.hero-mockup img:hover { transform: translateY(-10px) rotate(-2deg); }
 
-/* --- BUTTONS --- */
-.btn-primary {
-    background: var(--blue); color: white; border: none;
-    padding: 18px 35px; border-radius: 100px; font-weight: 600;
-    cursor: pointer; transition: 0.3s; font-size: 16px;
+.mockup-image:hover {
+    transform: translateY(-12px) scale(1.02);
+    filter: drop-shadow(0 40px 70px rgba(32, 64, 153, 0.2));
 }
-.btn-primary:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(32,64,153,0.2); }
 
-/* --- FEATURES --- */
-.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; margin-bottom: 150px; }
-.feature-row.reverse { direction: rtl; }
-.feature-row.reverse .feature-content { direction: ltr; }
-h2 { font-size: 36px; font-weight: 800; color: var(--blue); margin-bottom: 20px; }
-
-/* --- WAITLIST --- */
+/* --- THE WAITLIST CARD (Better Gradient) --- */
 .waitlist-card {
-    background: var(--blue); color: white; padding: 80px 40px;
-    border-radius: 40px; text-align: center;
-}
-.waitlist-form input {
-    width: 300px; padding: 18px; border-radius: 12px; border: none; margin-right: 10px;
+    background: linear-gradient(135deg, #204099 0%, #4C86C6 100%);
+    padding: 80px 40px;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(32, 64, 153, 0.3);
 }
 
-/* MOBILE FIX */
-@media (max-width: 800px) {
-    .hero-grid, .feature-row { grid-template-columns: 1fr; text-align: center; }
-    h1 { font-size: 40px; }
-    .feature-row.reverse { direction: ltr; }
-    .waitlist-form input { width: 100%; margin-bottom: 15px; }
+.waitlist-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.waitlist-form input {
+    width: 350px;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.waitlist-form input:focus {
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(76, 134, 198, 0.4);
+}
+
+/* --- MOBILE OPTIMIZATION (No More Lag) --- */
+@media (max-width: 850px) {
+    .feature-row, .feature-row.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .feature-content {
+        max-width: 100%;
+    }
+
+    .waitlist-form {
+        flex-direction: column;
+    }
+
+    .waitlist-form input {
+        width: 100%;
+    }
 }
