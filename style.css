@@ -1,58 +1,209 @@
-/* --- SECTION SPACING (The Breath) --- */
-section {
-    padding: 100px 0;
-    opacity: 1;
+/* --- STUDEROO 2026 CORE STYLES --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+    --dark-blue: #204099;
+    --light-blue: #4C86C6;
+    --valkonen: #FFFFFF;
+    --soft-bg: #F8F9FF;
+    --text-main: #1D1D1F;
+    --text-muted: #6E6E73;
+    --glass: rgba(255, 255, 255, 0.8);
 }
 
-/* --- FEATURES SECTION (The Smooth Fix) --- */
-.feature-row {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--valkonen);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- NAVIGATION (Glass Effect) --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1000;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    letter-spacing: -1px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    margin-left: 24px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.nav-links a:hover { color: var(--dark-blue); }
+
+.nav-cta {
+    background: var(--dark-blue);
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 100px 0;
+    background: radial-gradient(circle at 80% 20%, #eef2ff 0%, #ffffff 100%);
+}
+
+.hero-grid {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 80px;
-    margin-bottom: 120px;
+    gap: 60px;
 }
 
-/* This is the smooth way to flip the layout without "lag" */
-.feature-row.reverse {
-    flex-direction: row-reverse;
+.hero-text { flex: 1.2; }
+.hero-mockup { flex: 1; display: flex; justify-content: center; }
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #eef2ff;
+    color: var(--dark-blue);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 24px;
 }
 
-.feature-content {
-    flex: 1;
+.hero-title {
+    font-size: 62px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin-bottom: 24px;
+    letter-spacing: -0.04em;
+}
+
+.hero-subtitle {
+    font-size: 19px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
     max-width: 500px;
 }
 
-.feature-mockup {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    /* This tells the GPU to prepare for animation, making it lag-free */
-    will-change: transform; 
-}
-
-.mockup-image {
+/* --- THE MOCKUPS (Fixed & Floating) --- */
+.hero-mockup img, .mockup-image {
     width: 100%;
-    max-width: 380px;
+    max-width: 400px;
     height: auto;
-    filter: drop-shadow(0 20px 40px rgba(32, 64, 153, 0.1));
-    /* Using a 'Bezier' curve makes the hover feel professional, not robotic */
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    border-radius: 0;
+    filter: drop-shadow(0 20px 40px rgba(32, 64, 153, 0.15));
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    will-change: transform;
 }
 
-.mockup-image:hover {
-    transform: translateY(-12px) scale(1.02);
-    filter: drop-shadow(0 40px 70px rgba(32, 64, 153, 0.2));
+.hero-mockup img:hover { transform: translateY(-15px) scale(1.02); }
+
+/* --- BUTTONS --- */
+.hero-cta-group { display: flex; gap: 16px; }
+
+.btn-primary {
+    background: var(--dark-blue);
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- THE WAITLIST CARD (Better Gradient) --- */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(32, 64, 153, 0.2);
+}
+
+/* --- FEATURES (The Smooth Flex Fix) --- */
+.features-section { padding: 120px 0; }
+
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 140px;
+}
+
+.feature-row.reverse { flex-direction: row-reverse; }
+
+.feature-content { flex: 1; }
+.feature-mockup { flex: 1; display: flex; justify-content: center; }
+
+.feature-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.feature-description {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.feature-list { list-style: none; }
+.feature-list li {
+    margin-bottom: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-main);
+}
+.feature-list li::before { content: "●"; color: var(--light-blue); font-size: 10px; }
+
+/* --- WAITLIST CARD --- */
+.waitlist-section { padding: 100px 0; }
+
 .waitlist-card {
-    background: linear-gradient(135deg, #204099 0%, #4C86C6 100%);
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--light-blue) 100%);
+    color: #fff;
     padding: 80px 40px;
     border-radius: 40px;
-    color: white;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(32, 64, 153, 0.3);
+    box-shadow: 0 30px 60px rgba(32, 64, 153, 0.2);
 }
 
 .waitlist-form {
@@ -63,37 +214,26 @@ section {
 }
 
 .waitlist-form input {
-    width: 350px;
-    padding: 20px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.2);
+    padding: 18px 24px;
+    border-radius: 14px;
+    border: none;
+    width: 320px;
     font-size: 16px;
     outline: none;
-    transition: 0.3s;
 }
 
-.waitlist-form input:focus {
-    background: #fff;
-    box-shadow: 0 0 0 4px rgba(76, 134, 198, 0.4);
-}
+/* --- FOOTER --- */
+.footer { padding: 80px 0 40px; background: #fcfcfd; border-top: 1px solid #eee; }
+.footer-bottom { text-align: center; color: #999; font-size: 14px; margin-top: 60px; }
 
-/* --- MOBILE OPTIMIZATION (No More Lag) --- */
-@media (max-width: 850px) {
-    .feature-row, .feature-row.reverse {
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 900px) {
+    .hero-grid, .feature-row, .feature-row.reverse {
         flex-direction: column;
         text-align: center;
-        gap: 40px;
+        gap: 50px;
     }
-    
-    .feature-content {
-        max-width: 100%;
-    }
-
-    .waitlist-form {
-        flex-direction: column;
-    }
-
-    .waitlist-form input {
-        width: 100%;
-    }
+    .hero-title { font-size: 42px; }
+    .waitlist-form { flex-direction: column; align-items: center; }
+    .waitlist-form input { width: 100%; max-width: 320px; }
 }
